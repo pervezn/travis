@@ -1,0 +1,40 @@
+{
+    "courses": [
+      {
+        "id": "EECS 336",
+        "title": "Algorithms",
+        "assignments": [
+          {
+            "id": "1",
+            "title": "Assignment 1",
+            "average_time_spent": 4,
+            "completed": "false"
+          },
+          {
+            "id": "2",
+            "title": "Assignment 2",
+            "average_time_spent": 8,
+            "completed": "false"
+          },
+          {
+            "id": "3",
+            "title": "Assignment 3",
+            "average_time_spent": 10,
+            "completed": "false"
+          }  
+        ]
+      },
+      {
+        "id": "EECS 211",
+        "title": "Intro to OOP",
+        "assignments": [
+          {
+            "id": "1",
+            "title": "Lab 1",
+            "average_time_spent": 9,
+            "completed": "false"
+          }
+        ]
+      }
+    ]
+  }
