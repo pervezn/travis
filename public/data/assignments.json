@@ -1,0 +1,50 @@
+{
+    "courses": [
+      {
+        "id": "EECS 336",
+        "title": "Algorithms",
+        "assignments": [
+          {
+            "id": "1",
+            "title": "Assignment 1",
+            "average_time_spent": 10,
+            "completed": "false",
+            "week": 1
+          },
+          {
+            "id": "2",
+            "title": "Assignment 2",
+            "average_time_spent": 4,
+            "completed": "false",
+            "week": 1
+          }
+        ]
+      },
+      {
+        "id": "EECS 211",
+        "title": "Intro to OOP",
+        "assignments": [
+          {
+            "id": "1",
+            "title": "Lab 1",
+            "average_time_spent": 8,
+            "completed": "false",
+            "week": 1
+          }
+        ]
+      },
+      {
+        "id": "EECS 213",
+        "title": "Data Structures",
+        "assignments": [
+          {
+            "id": "1",
+            "title": "HW 1",
+            "average_time_spent": 5,
+            "completed": "false",
+            "week": 1
+          }
+        ]
+      }
+    ]
+  }
