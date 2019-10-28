@@ -59,7 +59,7 @@ const CurrClasses = ({state}) => {
     <Col>
       <Card border="light">
         <Card.Body>
-          <Card.Title><h3>Upcoming Assignments</h3></Card.Title>
+          <Card.Title><h3>Upcoming Things</h3></Card.Title>
           <Card.Text>
             <ButtonGroup variant="flush">
               {state.classes.map(currClass =>
