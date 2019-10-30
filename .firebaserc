@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "study-stats"
+    "default": "study-stats",
+    "travis": "travis-ed497"
   }
 }
