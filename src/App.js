@@ -12,6 +12,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import _ from 'lodash';
 import { Chart } from "react-google-charts";
+import Recommendations from "./Recommendations.js";
 
 const week = 1;
 
@@ -64,7 +65,6 @@ const CurrClasses = ({state}) => {
             <ButtonGroup variant="flush">
               {state.classes.map(currClass =>
                 currClass.assignments.map(currAssignment =>
-
                 <React.Fragment key={currAssignment.title}>
                 <Button onClick={() => handleShow(currClass, currAssignment)}>{currClass.title} - {currAssignment.title}</Button>
                 <br />
@@ -96,31 +96,31 @@ const CurrClasses = ({state}) => {
   );
 };
 
-const Recommendations = ({state}) => {
-  let maxHours = 0;
-  let cardText = "";
-  if (state.classes[0].assignments.length === 0) {
-    cardText = "Congrats! You have no more assignments."
-  }
-  for (let i = 0; i < state.classes.length; i += 1) {
-    for (let j = 0; j < state.classes[i].assignments.length; j += 1) {
-      if (state.classes[i].assignments[j].average_time_spent > maxHours) {
-        maxHours = state.classes[i].assignments[j].average_time_spent;
-        cardText = "Past students have spent " + state.classes[i].assignments[j].average_time_spent + " hours on " + state.classes[i].title + " - " + state.classes[i].assignments[j].title + ". We recommend you start this one first!";
-      }
-    }
-  }
-  return (
-    <Col>
-      <Card border="light">
-        <Card.Body>
-          <Card.Title><h3>Recommendation</h3></Card.Title>
-          <Card.Text>{cardText}</Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
-  )
-};
+// const Recommendations = ({state}) => {
+//   let maxHours = 0;
+//   let cardText = "";
+//   if (state.classes[0].assignments.length === 0) {
+//     cardText = "Congrats! You have no more assignments."
+//   }
+//   for (let i = 0; i < state.classes.length; i += 1) {
+//     for (let j = 0; j < state.classes[i].assignments.length; j += 1) {
+//       if (state.classes[i].assignments[j].average_time_spent > maxHours) {
+//         maxHours = state.classes[i].assignments[j].average_time_spent;
+//         cardText = "Past students have spent " + state.classes[i].assignments[j].average_time_spent + " hours on " + state.classes[i].title + " - " + state.classes[i].assignments[j].title + ". We recommend you start this one first!";
+//       }
+//     }
+//   }
+//   return (
+//     <Col>
+//       <Card border="light">
+//         <Card.Body>
+//           <Card.Title><h3>Recommendation</h3></Card.Title>
+//           <Card.Text>{cardText}</Card.Text>
+//         </Card.Body>
+//       </Card>
+//     </Col>
+//   )
+// };
 
 const Graph = ({state}) => {
   const options = {
