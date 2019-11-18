@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, fireEvent} from 'react-testing-library';
+import {render, fireEvent} from '@testing-library/react';
 import CurrClasses from "./CurrClasses.js";
 import Modal from 'react-bootstrap/Modal';
 
