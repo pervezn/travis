@@ -1,24 +1,27 @@
 import React from 'react'
 import {render, fireEvent} from 'react-testing-library'
 import CurrClasses from "./CurrClasses.js"
+import Modal from 'react-bootstrap/Modal'
 
-test('CurrClasses should render passed props as content body and respond to callback props', () => {
-    const markTodoDone = jest.fn()
-    const removeItem = jest.fn()
+test('CurrClasses should render passed state to display modal', () => {
+  //render set-up  
+  let classes = {id: "nida", title: "Nida's Class", assignments: ["write a letter"]}
+  let setClasses = jest.fn();
+  let buttonPress = jest.fn();
+  let modal = document.createElement('Modal');
+  let openModal = act(() => {
+    ReactDOM.render(<Modal />, modal);
+  });
+  let key = "nida";
+  const {getByTestId} = render(<CurrClasses key={key} 
+                                            state={classes, setClasses} 
+                                            />);
+  //assertion 1: Check if button renders
+  expect(getByTestId('classes1').textContent).toBe("Nida's Class")
+
+  //assertion 2: Check if modal loads on button press
+  fireEvent.click(getByTestId('buttonPressed'))
+  expect(buttonPress).toBeCalledWith(openModal) //HUH
+  expect(openModal).toHaveBeenCalledTimes(1)
   
-    const item = {index: 3, value: "Fill Gas", done: false}
-    let itemIndex = 5
-    const {getByTestId} = render(<TodoListItem item={item} index={itemIndex}
-                                               markTodoDone={markTodoDone}
-                                               removeItem={removeItem}/>)
-  
-    expect(getByTestId('todoItem3').textContent).toBe('Fill Gas')
-  
-    fireEvent.click(getByTestId('markAsCompleted'))
-    expect(markTodoDone).toBeCalledWith(itemIndex)
-    expect(markTodoDone).toHaveBeenCalledTimes(1)
-  
-    fireEvent.click(getByTestId('markAsDeleted'))
-    expect(removeItem).toBeCalledWith(itemIndex)
-    expect(removeItem).toHaveBeenCalledTimes(1)
-  })
+})
