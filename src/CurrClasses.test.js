@@ -9,7 +9,7 @@ test('CurrClasses should render passed state to display modal', () => {
   let setClasses = jest.fn();
   let buttonPress = jest.fn();
   let modal = document.createElement('Modal');
-  let openModal = act(() => {
+  const openModal = act(() => {
     ReactDOM.render(<Modal />, modal);
   });
   let key = "nida";
